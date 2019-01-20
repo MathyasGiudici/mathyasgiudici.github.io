@@ -135,8 +135,8 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #555;
-		line-height: 1em;
-		margin: 0 0 1em 0;
+		line-height: 2em;
+		margin: 0 0 0.2em 0;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2351,13 +2351,24 @@ input, select, textarea {
 			top: 0.25em;
 		}
 
-		.image.left, .image.right {
+		.image.logo {
+			float: left;
+			padding: 0 1em 1em 1em;
+			top: 0.25em;
+			width: 25%;
+		}
+
+		.image.left, .image.right, .image.logo {
 			max-width: 40%;
 		}
 
-			.image.left img, .image.right img {
+		.image.left img, .image.right img {
 				width: 100%;
-			}
+		}
+
+		.image.logo img {
+			width: 100%;
+		}
 
 		.image.fit {
 			display: block;
@@ -2801,7 +2812,8 @@ input, select, textarea {
 			background-color: #333;
 			color: rgba(255, 255, 255, 0.75);
 			background-attachment: fixed,							fixed;
-			background-image: url("images/overlay1.png"), url("../../images/header.jpg");
+			background-image: url("images/overlay2.png"), url("images/overlay4.svg"), linear-gradient(45deg, #111, #444 50%, #888 95%);
+				/* background-image: url("images/overlay1.png"), url("../../images/header.jpg"); */
 			background-size: auto,							cover;
 		}
 
@@ -2897,7 +2909,7 @@ input, select, textarea {
 		overflow: hidden;
 		position: relative;
 		text-align: center;
-		height: -webkit-fill-available;
+		/* height: -webkit-fill-available; */
 	}
 
 		#header a {
