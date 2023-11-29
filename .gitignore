@@ -1,0 +1,7 @@
+# General
+.DS_Store
+
+# Gulp, Node and npm
+package-lock.json
+/node_modules
+.DS_Store
