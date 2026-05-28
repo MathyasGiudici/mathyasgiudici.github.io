@@ -10,7 +10,7 @@ const header = require("gulp-header");
 const merge = require("merge-stream");
 const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require("sass"));
 const uglify = require("gulp-uglify");
 
 // Load package.json for banner
@@ -75,9 +75,10 @@ function css() {
   return gulp
     .src("./scss/**/*.scss")
     .pipe(plumber())
-    .pipe(sass({
+    .pipe(sass.sync({
       outputStyle: "expanded",
       includePaths: "./node_modules",
+      silenceDeprecations: ["legacy-js-api", "import", "global-builtin", "color-functions"],
     }))
     .on("error", sass.logError)
     .pipe(autoprefixer({
